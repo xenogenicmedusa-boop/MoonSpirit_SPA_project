@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>月亮心理諮商診所｜降落在B-612，聆聽你心裡的玫瑰</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Noto+Serif+TC:wght@300;500;700&family=Noto+Sans+TC:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-cream: #F9F6F0;
+            --space-navy: #2D3A4D;
+            --rose-clay: #D9A08B;
+            --soft-gold: #EAC575;
+            --text-dark: #3A444E;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+            letter-spacing: 0.05em;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-serif {
+            font-family: 'Noto Serif TC', serif;
+            font-weight: 500;
+        }
+
+        .en-sub {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            color: var(--rose-clay);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .wave-divider-top {
+            border-radius: 100% 100% 0 0 / 20px 20px 0 0;
+        }
+
+        .organic-shape {
+            border-radius: 60% 40% 60% 40% / 50% 60% 40% 50%;
+            background-color: rgba(217, 160, 139, 0.1);
+        }
+
+        .bg-space-navy {
+            background-color: var(--space-navy) !important;
+        }
+
+        .text-soft-gold {
+            color: var(--soft-gold) !important;
+        }
+
+        .btn-organic {
+            background-color: transparent;
+            color: var(--space-navy);
+            border: 1px solid var(--space-navy);
+            border-radius: 30px;
+            padding: 8px 30px;
+            font-size: 0.9rem;
+            transition: 0.4s ease;
+        }
+
+        .btn-organic:hover {
+            background-color: var(--space-navy);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        #s05 {
+            position: relative;
+            padding: 120px 0;
+            background-color: #ffffff;
+            border-radius: 8% 8% 0 0 / 40px 40px 0 0;
+        }
+
+        .timeline-container {
+            position: relative;
+        }
+
+        .timeline-container::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            transform: translateX(-50%);
+            background: linear-gradient(to bottom, var(--rose-clay) 0%, transparent 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 100px 0;
+        }
+
+        .timeline-item::before {
+            content: "✦";
+            position: absolute;
+            color: var(--soft-gold);
+            font-size: 14px;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .timeline-card {
+            background: var(--bg-cream);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(58, 68, 78, 0.03);
+            transition: 0.4s ease;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(219, 160, 139, 0.12);
+        }
+
+        .timeline-img {
+            height: 320px;
+            border-radius: 40% 60% 50% 50% / 40% 40% 60% 60%;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: 0.5s ease;
+        }
+
+        .timeline-item:hover .timeline-img {
+            border-radius: 50% 50% 40% 60% / 50% 40% 60% 50%;
+        }
+
+        @media (max-width: 991px) {
+            .timeline-container::before {
+                left: 15px;
+            }
+
+            .timeline-item::before {
+                left: 15px;
+                transform: none;
+            }
+
+            .timeline-card,
+            .timeline-img {
+                margin-left: 35px;
+            }
+
+            .flex-column-reverse-md {
+                flex-direction: column-reverse !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Section 1：社群連結與寂靜問候 -->
+    <section id="s01" class="py-2" style="background-color: #f3ede2; color: var(--space-navy);">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+            <small class="font-light"><i class="fa-solid fa-moon me-2 opacity-50"></i>宇宙求救信號接收處：(04) 2345-6789</small>
+            <div class="d-flex align-items-center">
+                <a href="#" class="text-reset me-3 opacity-70"><i class="fa-brands fa-square-x-twitter"
+                        style="color: black;"></i></a>
+                <a href="#" class="text-reset me-3 opacity-70"><i class="fa-brands fa-instagram"
+                        style="color: rgba(255, 92, 213, 0.9);"></i></a>
+                <a href="#" class="text-reset opacity-70"><i class="fa-brands fa-line"
+                        style="color: aquamarine;"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2：Navbar 導覽選單（參考範本的優雅留白） -->
+    <nav id="s02" class="navbar navbar-expand-lg bg-cream py-3 shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center text-space-navy" href="#">
+                <span class="font-serif fw-bold" style="letter-spacing: 2px;">月亮心理諮商</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link px-3 small" href="#s03">小行星入口</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 small" href="#s04">溫柔獨白</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 small" href="#s05">馴服對話</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 small" href="#s06">微光承諾</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 small" href="#s07">心靈旅伴</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 small" href="#s08">適用星系</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 small" href="#s09">星際指南</a></li>
+                </ul>
+                <a href="#s10" class="btn btn-organic btn-sm ms-lg-4">降落預約</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 3：Carousel 輕柔繪本風幻燈片 -->
+    <div id="s03" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div id="carouselcaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselcaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselcaptions" data-bs-slide-to="1" class="active"
+                    aria-current="true" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselcaptions" data-bs-slide-to="2" class="active"
+                    aria-current="true" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active"
+                    style="background: linear-gradient(to right, rgba(249,246,240,0.95), rgba(249,246,240,0.6)), url(images/photo-1444703686981-a3abbc4d4fe3.avif) center/cover; height: 580px;">
+                    <div class="container h-100 d-flex align-items-center">
+                        <div class="col-lg-7 text-start px-3">
+                            <span class="en-sub">LE PETIT PRINCE</span>
+                            <h1 class="display-4 fw-bold mb-3 text-space-navy" style="line-height: 1.4;">
+                                真正重要的東西，<br>用眼睛是看不見的。</h1>
+                            <p class="text-muted mb-4 font-light leading-relaxed">
+                                當浩瀚的宇宙讓你感到疲憊與無聲，請來到這裡。<br>在月球的背面，有一座專屬於你、不必假裝堅強的小行星避風港。</p>
+                            <a href="#s05" class="btn btn-organic px-4 py-2">走進 B-612 星球</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item"
+                    style="background: linear-gradient(to right, rgba(249,246,240,0.95), rgba(249,246,240,0.6)), url('images/aron-visuals-4SboHS5sbY4-unsplash.jpg') center/cover; height: 580px;">
+                    <div class="container h-100 d-flex align-items-center">
+                        <div class="col-lg-7 text-start px-3">
+                            <span class="en-sub">LE PETIT PRINCE</span>
+                            <h1 class="display-4 fw-bold mb-3 text-space-navy" style="line-height: 1.4;"><br></h1>
+                            <p class="text-muted mb-4 font-light leading-relaxed"><br></p>
+                            <a href="#s05" class="btn btn-organic px-4 py-2">走進 B-612 星球</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item"
+                    style="background: linear-gradient(to right, rgba(249,246,240,0.95), rgba(249,246,240,0.6)), url(images/farid-askerov-5BtJwm-CCK0-unsplash.jpg) center/cover; height: 580px;">
+                    <div class="container h-100 d-flex align-items-center">
+                        <div class="col-lg-7 text-start px-3">
+                            <span class="en-sub">LE PETIT PRINCE</span>
+                            <h1 class="display-4 fw-bold mb-3 text-space-navy" style="line-height: 1.4;"><br></h1>
+                            <p class="text-muted mb-4 font-light leading-relaxed"><br></p>
+                            <a href="#s05" class="btn btn-organic px-4 py-2">走進 B-612 星球</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselcaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselcaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Section 4：溫柔獨白 / 品牌理念 -->
+    <section id="s04" class="py-5" style="background-color: var(--bg-cream);">
+        <div class="container py-5">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-6 px-4 text-center text-lg-start">
+                    <span class="en-sub">ABOUT US</span>
+                    <h2 class="text-space-navy mb-4">在黑暗的夜空裡，<br>成為彼此的微光</h2>
+                    <p class="text-muted leading-loose small">
+                        「月亮心理諮商診所」成立的初心，就像童話裡那顆遠離繁華的小行星。我們不急著教你怎麼長大、怎麼變得符合社會期待；我們只想在安靜的月球背面，陪你一起拔除心靈土穰裡悄悄長大的猴麵包樹，細心灌溉那一朵對你而言獨一無二的玫瑰。
+                    </p>
+                </div>
+                <div class="col-lg-5 col-8 mt-4 mt-lg-0">
+                    <!-- 不規則幾何手繪色塊與照片疊加效果 -->
+                    <div class="organic-shape p-5 text-center">
+                        <i
+                            class="fa-solid fa-moon text-soft-gold fa-4x animate__animated animate__pulse animate__infinite"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5：馴服對話項目 / 故事時光軸 (服務項目) -->
+    <section id="s05" class="py-5"
+        style="background-image: url(images/jeremy-hynes-6rMK65PSioY-unsplash.jpg);background-position: center center; background-size: cover; background-attachment: fixed;">
+        <div class="container">
+            <div class="text-center mb-5 pb-3">
+                <span class="en-sub">OUR SERVICES</span>
+                <h2 class="text-space-navy fw-bold">宇宙星軌上的心靈交會</h2>
+                <p class="text-muted small">在這個沒有重力的真空空間裡，重新安放你的情緒碎片</p>
+            </div>
+
+            <div class="timeline-container">
+                <!-- 方案 1 -->
+                <div class="row align-items-center timeline-item">
+                    <div class="col-lg-6 mb-4">
+                        <div class="timeline-card">
+                            <span class="text-rose-clay font-serif small d-block mb-2">✦ 01 . 玫瑰的獨白</span>
+                            <h3 class="mb-3 text-space-navy">個別深層心理諮商</h3>
+                            <p class="text-muted small leading-relaxed mb-0">
+                                面對憂鬱、恐慌、或那些說不出口的空虛。心理師會陪著你，像小王子蓋上玻璃罩保護玫瑰一般，溫柔地隔絕外界的喧囂，在絕對安全的隱私下，重新釐清靈魂深處的呼喊。</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="timeline-img"
+                            style="background-image: url(images/photo-1518241353330-0f7941c2d9b5.avif);">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 方案 2 -->
+                <div class="row align-items-center flex-row-reverse flex-column-reverse-md timeline-item">
+                    <div class="col-lg-6 mb-4">
+                        <div class="timeline-img"
+                            style="background-image: url(images/youngeon-lee-U0IyD-K_vSU-unsplash.jpg);">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="timeline-card">
+                            <span class="text-rose-clay font-serif small d-block mb-2">✦ 02 . 狐狸的約定</span>
+                            <h3 class="mb-3 text-space-navy">伴侶與親密關係諮商</h3>
+                            <p class="text-muted small leading-relaxed mb-0">
+                                「因為你馴服了我，我們就成了彼此的唯一。」當伴侶關係在長久誤解中變得冰冷，我們提供一個充滿中立與接納的對話星系，協助雙方解讀彼此刺蝟外表下的脆弱渴望。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6：心靈旅伴 / 專業團隊  -->
+    <section id="s06" class="py-5">
+        <div class="container py-4">
+            <h2 class="text-center fw-bold text-space-dark mb-2 font-serif">懂你的星際旅伴</h2>
+            <p class="text-center text-muted small mb-5">所有的成熟大人，都曾是個孩子（只是很少人記得）</p>
+            <div class="row g-4 justify-content-center">
+                <!-- 心理師 1 -->
+                <div class="col-md-4 text-center">
+                    <div class="position-relative d-inline-block">
+                        <img src="images/user32.png" class="rounded-circle mb-3 moon-glow" width="200" height="200"
+                            alt="所長" style="border: 3px solid var(--star-gold)">
+                    </div>
+                    <h4 class="fw-bold mb-1">林月茹 諮商心理師</h4>
+                    <p class="text-rose-pink small fw-bold">所長 ｜ B-612 星球護衛者</p>
+                    <p class="text-muted small px-4">「每顆流星都有落地的理由。」專長深度創傷整合、內在小孩療癒，用如同月光般的溫暖包容你的一切不完美。</p>
+                </div>
+                <!-- 心理師 2 -->
+                <div class="col-md-4 text-center">
+                    <div class="position-relative d-inline-block">
+                        <img src="images/user31.png" class="rounded-circle mb-3 shadow" width="200" height="200"
+                            alt="心理師">
+                    </div>
+                    <h4 class="fw-bold mb-1">張宇航 諮商心理師</h4>
+                    <p class="text-star-gold small fw-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.1)">資深心理師 ｜
+                        孤獨解讀者</p>
+                    <p class="text-muted small px-4">「迷路，是為了看清星空。」專長高壓社會焦慮、男性生涯迷惘、職場 Burnout，擅長在寂靜中為你點燃一盞導航燈。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7：服務流程  -->
+    <section id="s07" class="py-5"
+        style="background-image: url(images/jeremy-hynes-6rMK65PSioY-unsplash.jpg);background-position: center center; background-size: cover; background-attachment: fixed;">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <span class="en-sub">PROCESS</span>
+                <h2 class="text-space-navy fw-bold">降落小行星的療癒旅程</h2>
+                <p class="text-muted small">從發射訊號到重新出發，每一步都有我們溫柔引航</p>
+            </div>
+
+            <div class="row g-4 justify-content-center text-center">
+                <div class="col-md-3 px-3 position-relative">
+                    <span class="display-5 fw-bold text-soft-gold opacity-50 font-serif d-block mb-2">01</span>
+                    <span class="en-sub" style="font-size: 0.65rem;">SIGNAL</span>
+                    <h5 class="fw-bold text-space-navy mb-2">發射宇宙訊號</h5>
+                    <p class="text-muted small leading-relaxed px-2">填寫預約表單或撥打專線，留下您的座標與近期悄悄困擾您的大雨。行政秘書將於 24
+                        小時內與您建立初步聯繫。</p>
+                </div>
+
+                <div class="col-md-3 px-3 position-relative">
+                    <span class="display-5 fw-bold text-soft-gold opacity-50 font-serif d-block mb-2">02</span>
+                    <span class="en-sub" style="font-size: 0.65rem;">MATCH</span>
+                    <h5 class="fw-bold text-space-navy mb-2">星際旅伴媒合</h5>
+                    <p class="text-muted small leading-relaxed px-2">透過短暫的電話初談，我們會像尋找最契合的狐狸一樣，依據您的議題類型與特質，為您引薦最合適的心理師。
+                    </p>
+                </div>
+
+                <div class="col-md-3 px-3 position-relative">
+                    <span class="display-5 fw-bold text-soft-gold opacity-50 font-serif d-block mb-2">03</span>
+                    <span class="en-sub" style="font-size: 0.65rem;">LANDING</span>
+                    <h5 class="fw-bold text-space-navy mb-2">安全降落初訪</h5>
+                    <p class="text-muted small leading-relaxed px-2">實體來到靜謐無塵的諮商室。這 50
+                        分鐘是專屬於您的玻璃罩，您可以放心地卸下防衛，與心理師共同討論未來的療癒方向。</p>
+                </div>
+
+                <div class="col-md-3 px-3 position-relative">
+                    <span class="display-5 fw-bold text-soft-gold opacity-50 font-serif d-block mb-2">04</span>
+                    <span class="en-sub" style="font-size: 0.65rem;">GROWTH</span>
+                    <h5 class="fw-bold text-space-navy mb-2">定期灌溉與修剪</h5>
+                    <p class="text-muted small leading-relaxed px-2">
+                        依約定頻率定期訪談。我們會陪您耐心地修剪心靈土穰的猴麵包樹，直至您長出足夠的力量，重新啟航翱翔屬於自己的星空。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8：優勢特色  -->
+    <section id="s08" class="py-5" style="background-color: var(--bg-cream);">
+        <div class="container py-5">
+            <h2 class="text-center text-space-navy mb-5">在寂靜宇宙中，保護你的屏障</h2>
+            <div class="row g-4 text-center justify-content-center">
+                <div class="col-md-4 px-3">
+                    <span class="en-sub">PRIVACY</span>
+                    <h5 class="fw-bold text-space-navy mb-2">如真空般的隱私</h5>
+                    <p class="text-muted small leading-relaxed">這裡如同沒有聲音傳播的太空真空層，所有秘密與痛苦都會被完整吸納，嚴格遵循心理諮商最高倫理規範。</p>
+                </div>
+                <div class="col-md-4 px-3">
+                    <span class="en-sub">CARE</span>
+                    <h5 class="fw-bold text-space-navy mb-2">溫柔清除壞麵包樹</h5>
+                    <p class="text-muted small leading-relaxed">焦慮與壞習慣就如同壞種子。我們不用批判的方式拔除，而是陪你耐心地梳理，讓好念頭重新發芽。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Section 9：環境介紹 -->
+    <section id="s09" class="py-5" style="background-image: url(images/jeremy-hynes-6rMK65PSioY-unsplash.jpg);background-position: center center; background-size: cover; background-attachment: fixed;">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <span class="en-sub">OUR SPACE</span>
+                <h2 class="text-space-navy fw-bold">溫暖而無塵的避風港</h2>
+                <p class="text-muted small">這裏隔絕了地球的喧囂，提供高敏感的你一處最放鬆的無重力空間</p>
+            </div>
+
+            <div class="row g-4 align-items-center justify-content-center">
+                <div class="col-md-5">
+                    <div class="organic-shape p-4 mb-4" style="background-color: rgba(234, 197, 117, 0.08);">
+                        <h5 class="fw-bold text-space-navy mb-3">✦ 靜謐隔音與微光設計</h5>
+                        <p class="text-muted small leading-relaxed mb-0">
+                            我們深知高敏感的心靈需要加倍的呵護。諮商室內備有高規格的雙層密閉隔音木門，以及模擬溫柔月光的低調壁燈。在這裡，你可以深深地呼吸、放心地流淚，任何聲音都不會傳到外面。</p>
+                    </div>
+                    <div class="p-4 rounded-4" style="background-color: var(--bg-cream);">
+                        <h5 class="fw-bold text-space-navy mb-3">✦ 正念雪松與雲朵沙發</h5>
+                        <p class="text-muted small leading-relaxed mb-0">
+                            空氣中飄散著淡淡的天然雪松與薰衣草精油，協助緊繃的神經系統沉靜下來。陷進如雲朵般柔軟的單人沙發裡，讓身體先放鬆，心靈的對話才能自然地流淌。</p>
+                    </div>
+                </div>
+                <div class="col-md-5 mt-4 mt-md-0">
+                    <div class="timeline-img"
+                        style="background-image: url(images/photo-1616486338812-3dadae4b4ace.avif); height: 420px; border-radius: 50% 40% 60% 40% / 40% 50% 40% 60%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 10：顧客見證 -->
+    <section id="s10" class="py-5" style="background-color: var(--bg-cream);">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <span class="en-sub">TESTIMONIALS</span>
+                <h2 class="text-space-navy fw-bold">來自宇宙旅人的回信</h2>
+                <p class="text-muted small">那些曾降落 B-612 的靈魂，如今都在自己的星空裡微微發亮</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-5 px-3">
+                    <div
+                        class="bg-white p-4 rounded-4 shadow-sm h-100 position-relative d-flex flex-column justify-content-between">
+                        <div>
+                            <span class="text-soft-gold fs-3 font-serif position-absolute"
+                                style="top: 15px; left: 20px; opacity: 0.3;">“</span>
+                            <p class="text-muted small leading-relaxed pt-3 mb-4">
+                                「過去的我像個拼命加班的點燈人，總覺得停下來就是罪惡。在月亮諮商的這半年，心理師沒有催我變好，只是陪我一起看日落、梳理焦慮。現在我終於找回了自己的呼吸節奏，學會溫柔地對待自己。」
+                            </p>
+                        </div>
+                        <div class="border-top pt-3">
+                            <h6 class="fw-bold text-space-navy small mb-1">任職科技業的 32 歲點燈人</h6>
+                            <span class="text-rose-clay" style="font-size: 0.75rem;">進行個別諮商 8 次後的回饋</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5 px-3">
+                    <div
+                        class="bg-white p-4 rounded-4 shadow-sm h-100 position-relative d-flex flex-column justify-content-between">
+                        <div>
+                            <span class="text-soft-gold fs-3 font-serif position-absolute"
+                                style="top: 15px; left: 20px; opacity: 0.3;">“</span>
+                            <p class="text-muted small leading-relaxed pt-3 mb-4">
+                                「我和伴侶原本像兩隻刺蝟，一開口就是互相傷害，心裡的玫瑰早已枯萎。謝謝月亮的心理師為我們建立了一個絕對安全、沒有道德批判的樹洞，讓我們終於聽懂彼此防衛底下的脆弱與愛。」
+                            </p>
+                        </div>
+                        <div class="border-top pt-3">
+                            <h6 class="fw-bold text-space-navy small mb-1">結婚四年的 H 先生與林小姐</h6>
+                            <span class="text-rose-clay" style="font-size: 0.75rem;">進行伴侶諮商 12 次後的回饋</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 11：星際指南 FAQ -->
+    <section id="s11" class="py-5" style="background-image: url(images/jeremy-hynes-6rMK65PSioY-unsplash.jpg);background-position: center center; background-size: cover; background-attachment: fixed;">
+        <div class="container py-5">
+            <h2 class="text-center text-space-navy mb-5">降落前的心靈導航指南</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="mb-4">
+                        <h6 class="text-space-navy fw-bold mb-2">✦ 我需要很嚴重才可以去諮商嗎？</h6>
+                        <p class="text-muted small mb-0">不用的。就像小王子每天都要清理星球上的雜草，心理諮商是一項精神日常保養。當你覺得生活失重時，隨時歡迎你降落。</p>
+                    </div>
+                    <div class="mb-4">
+                        <h6 class="text-space-navy fw-bold mb-2">✦ 談話內容真的會完全保密嗎？</h6>
+                        <p class="text-muted small mb-0">是的。除了涉及自傷或法律明文規範的極少數通報例外情形，您在諮商室內所說的任何話，皆受到嚴格的保密倫理限制。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Section 12：收費方案 -->
+    <section id="s12" class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="text-center mb-5 wow fadeInUp" data-wow-duration="1.2s">
+                <span class="en-sub">PRICING & FEES</span>
+                <h2 class="text-space-navy fw-bold">心靈灌溉的預算方案</h2>
+                <p class="text-muted small">透明且符合倫理規範的收費，是給予這段關係最安心的承諾</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4 px-3 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
+                    <div class="p-4 rounded-4 shadow-sm h-100 text-center d-flex flex-column justify-content-between" style="background-color: var(--bg-cream); border: 1px solid rgba(45, 58, 77, 0.05);">
+                        <div>
+                            <span class="text-rose-clay font-serif small d-block mb-2">✦ INDIVIDUAL</span>
+                            <h4 class="fw-bold text-space-navy mb-3">個別心理諮商</h4>
+                            <hr class="opacity-10 my-3">
+                            <div class="my-4">
+                                <span class="fs-2 fw-bold text-space-navy">NT$ 2,000</span>
+                                <span class="text-muted small"> / 50分鐘</span>
+                            </div>
+                            <p class="text-muted small leading-relaxed text-start">適用於自我探索、情緒困擾（憂鬱/焦慮）、職場壓力、創傷修復。在專屬的玻璃罩內，由資深心理師一對一溫柔引航。</p>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#s10" class="btn btn-organic w-100 py-2">選擇此方案</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 px-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+                    <div class="p-4 rounded-4 shadow h-100 text-center d-flex flex-column justify-content-between bg-white" style="border: 2px solid var(--rose-clay); transform: scale(1.02);">
+                        <div>
+                            <span class="text-soft-gold font-serif small d-block mb-2">✦ COUPLE & MARRIAGE</span>
+                            <h4 class="fw-bold text-space-navy mb-3">伴侶與婚姻諮商</h4>
+                            <hr class="opacity-10 my-3">
+                            <div class="my-4">
+                                <span class="fs-2 fw-bold text-space-navy">NT$ 3,000</span>
+                                <span class="text-muted small"> / 80分鐘</span>
+                            </div>
+                            <p class="text-muted small leading-relaxed text-start">適用於伴侶衝突、親密關係信任崩解、溝通障礙。提供中立的安全星系，引導兩隻防衛的刺蝟卸下武裝，聽見彼此的愛。</p>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#s10" class="btn btn-organic w-100 py-2 bg-space-navy text-white border-0">選擇此方案</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 px-3 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.6s">
+                    <div class="p-4 rounded-4 shadow-sm h-100 text-center d-flex flex-column justify-content-between" style="background-color: var(--bg-cream); border: 1px solid rgba(45, 58, 77, 0.05);">
+                        <div>
+                            <span class="text-rose-clay font-serif small d-block mb-2">✦ ADVANCED INTEGRATION</span>
+                            <h4 class="fw-bold text-space-navy mb-3">深度創傷整合</h4>
+                            <hr class="opacity-10 my-3">
+                            <div class="my-4">
+                                <span class="fs-2 fw-bold text-space-navy">NT$ 2,500</span>
+                                <span class="text-muted small"> / 60分鐘</span>
+                            </div>
+                            <p class="text-muted small leading-relaxed text-start">運用 EMDR（眼動減敏與歷程更新）或身體經驗療法。細緻消化生命重大變故與失落，撫平神經系統的過度警覺。</p>
+                        </div>
+                        <div class="mt-4">
+                            <a href="#s10" class="btn btn-organic w-100 py-2">選擇此方案</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 text-muted small wow fadeIn" data-wow-delay="1s">
+                <i class="fa-solid fa-circle-info me-1 opacity-50"></i> 
+                本診所完全採預約制。為維護每位旅人的諮商權益，如欲更改或取消時間，請於前 24 小時發射訊號告知。
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 13：信號留下 / 預約表單  -->
+    <section id="s13" class="py-5 wave-divider-top"  style="background-image: url(images/jeremy-hynes-6rMK65PSioY-unsplash.jpg);background-position: center center; background-size: cover; background-attachment: fixed;">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center mb-4">
+                    <span class="en-sub">RESERVATION</span>
+                    <h2 class="text-space-navy mb-3">留下你的宇宙座標</h2>
+                    <p class="text-muted small">發射你的訊號，我們會用最溫柔的音頻與你接軌。</p>
+                </div>
+                <div class="col-lg-7">
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control border-0 py-3 px-4 bg-white rounded-4 small"
+                                placeholder="如何稱呼你這個旅人？">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="tel" class="form-control border-0 py-3 px-4 bg-white rounded-4 small"
+                                placeholder="信號回收電話">
+                        </div>
+                        <div class="col-12">
+                            <textarea class="form-control border-0 py-3 px-4 bg-white rounded-4 small"
+                                style="height: 120px;" placeholder="簡述你星球上的大雨（選填）"></textarea>
+                        </div>
+                        <div class="col-12 text-center mt-4">
+                            <button type="submit"
+                                class="btn btn-organic px-5 py-3 bg-space-navy text-white border-0">向宇宙發射預約信號 ✦</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Section 14：門市資訊 -->  
+<section id="s14" class="py-5" style="background-color: var(--bg-cream); overflow: hidden;">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">            
+            <div class="col-lg-5 wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay="0.2s">
+                <span class="en-sub">LOCATION & HOURS</span>
+                <h2 class="text-space-navy fw-bold mb-4 font-serif">降落小行星的地點</h2>
+                <p class="text-muted small leading-relaxed mb-4">
+                    診所實體空間隱密、靜謐，座落於市區鬧中取靜的微光角落。當您推開門，這裡就成了與世隔絕的 B-612 星球。
+                </p>              
+                <div class="mt-4">
+                    <div class="d-flex align-items-start mb-3">
+                        <i class="fa-solid fa-location-dot text-rose-clay mt-1 me-3 fs-5"></i>
+                        <div>
+                            <h6 class="fw-bold text-space-navy mb-1">小行星座標 (地址)</h6>
+                            <p class="text-muted small mb-0">台中市西屯區工業區一路 100 號</p>
+                        </div>
+                    </div>                    
+                    <div class="d-flex align-items-start mb-3">
+                        <i class="fa-solid fa-clock text-rose-clay mt-1 me-3 fs-5"></i>
+                        <div>
+                            <h6 class="fw-bold text-space-navy mb-1">亮燈守護時間 (營業時間)</h6>
+                            <p class="text-muted small mb-0">週一至週五：13:00 - 21:00</p>
+                            <p class="text-muted small mb-0">週六：09:00 - 17:00 ． 週日公休</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start mb-3">
+                        <i class="fa-solid fa-envelope-open-text text-rose-clay mt-1 me-3 fs-5"></i>
+                        <div>
+                            <h6 class="fw-bold text-space-navy mb-1">星際通訊 (聯絡資訊)</h6>
+                            <p class="text-muted small mb-0">電話：(04) 2345-6789</p>
+                            <p class="text-muted small mb-0">信箱：service@moonclinic.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>             
+            <div class="col-lg-7 wow fadeInRight" data-wow-duration="1.2s" data-wow-delay="0.4s">
+                <div class="map-wrapper p-3 bg-white" style="border: none; border-radius: 30px; box-shadow: 0 20px 50px rgba(45, 58, 77, 0.04);">
+                    <iframe
+                        id="cyberMap"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14560.308352458655!2d120.6091776!3d24.1690291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693e048d342aa9%3A0x2b6f18a6783fa3b!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5Lit5b2w5oqV5YiG572y77yI6Ie65Lit6IG36KiT5bGA77yJ!5e0!3m2!1szh-TW!2stw!4v1782711333353!5m2!1szh-TW!2stw"
+                        width="100%" height="400" style="border:0; border-radius: 20px; filter: grayscale(10%) sepia(20%) contrast(90%);" allowfullscreen="" loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+                </div>
+            </div>                            
+        </div>
+    </div>        
+</section>
+    
+    <footer id="s15" class="py-4 text-center"
+        style="background-color: var(--space-navy); color: rgba(255,255,255,0.4);">
+        <div class="container">
+            <span class="font-serif d-block mb-2 text-soft-gold" style="letter-spacing: 1px;">月亮心理諮商診所</span>
+            <small class="d-block fs-7">「星星發亮，是為了讓每個人有一天都能找到屬於自己的那一顆。」</small>
+            <hr style="border-color: rgba(255,255,255,0.1);">
+            <small class="fs-7">© 2026 Moon Counseling Clinic ． 衛福部安心專線 1925</small>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+<script>
+    new WOW().init();
+</script>
+</body>
+
+</html>
