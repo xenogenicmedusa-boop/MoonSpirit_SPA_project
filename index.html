@@ -152,6 +152,56 @@
         .timeline-item:hover .timeline-img {
             border-radius: 50% 50% 40% 60% / 50% 40% 60% 50%;
         }
+        
+        .flip-card {
+            background-color: transparent;
+            width: 310px;
+            height: 360px;
+            perspective: 1000px;           
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);            
+            transform-style: preserve-3d;
+            box-shadow: 0 8px 24px rgba(45, 58, 77, 0.06);
+            border-radius: 20px;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;           
+            backface-visibility: hidden;
+            border-radius: 20px;
+            border: 1px solid rgba(45, 58, 77, 0.05);
+        }
+        
+        .flip-card-front {
+            background-color: #ffffff;
+            color: var(--space-dark);
+        }
+       
+        .flip-card-back {
+            background-color: #fdfbfa;
+            color: var(--space-dark);
+            transform: rotateY(180deg);            
+        }
+      
+        .x-small {
+            font-size: 0.75rem;
+            opacity: 0.6;
+            letter-spacing: 0.5px;
+        }
 
         @media (max-width: 768px) {
             .timeline-container::before {
@@ -217,71 +267,76 @@
     </nav>
 
     <!-- Section 3：Carousel 輕柔繪本風幻燈片 -->
-<section id="s03" class="carousel slide carousel-fade" data-bs-ride="carousel" style="background-color: var(--space-navy);">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#s03" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#s03" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#s03" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    
-    <div class="carousel-inner">
-        
-        <div class="carousel-item active" style="background: linear-gradient(to right, rgba(45,58,77,0.95) 30%, rgba(45,58,77,0.3) 100%), url(images/photo-1444703686981-a3abbc4d4fe3.avif) center right / contain no-repeat var(--space-navy); min-height: 450px; height: 60vh;">
-            <div class="container h-100 d-flex align-items-center">
-                <div class="col-lg-6 text-start px-3">
-                    <span class="en-sub">LE PETIT PRINCE</span>
-                    <h1 class="display-4 fw-bold mb-3 text-soft-gold" style="line-height: 1.4;">
-                        真正重要的東西，<br>用眼睛是看不見的。
-                    </h1>
-                    <p class="text-white-50 mb-4 font-light leading-relaxed">
-                        當浩瀚的宇宙讓你感到疲憊與無聲，請來到這裡。<br>在月球的背面，有一座專屬於你、不必假裝堅強的小行星避風港。
-                    </p>
-                    <a href="#s05" class="btn btn-organic px-4 py-2 text-white border-white">走進 B-612 星球</a>
-                </div>
-            </div>
+    <section id="s03" class="carousel slide carousel-fade" data-bs-ride="carousel"
+        style="background-color: var(--space-navy);">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#s03" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#s03" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#s03" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
 
-        <div class="carousel-item" style="background: linear-gradient(to right, rgba(45,58,77,0.95) 30%, rgba(45,58,77,0.3) 100%), url('images/aron-visuals-4SboHS5sbY4-unsplash.jpg') center right / contain no-repeat var(--space-navy); min-height: 450px; height: 60vh;">
-            <div class="container h-100 d-flex align-items-center">
-                <div class="col-lg-6 text-start px-3">
-                    <span class="en-sub">THE FOX</span>
-                    <h1 class="display-4 fw-bold mb-3 text-soft-gold" style="line-height: 1.4;">
-                        對我來說，你就是<br>宇宙唯一的存在。
-                    </h1>
-                    <p class="text-white-50 mb-4 font-light leading-relaxed">
-                        如果你馴服了我，我們將彼此需要。<br>傾聽心靈的寂靜躁動，在星際的旅途中，陪你找回最初被愛的勇氣。
-                    </p>
-                    <a href="#s05" class="btn btn-organic px-4 py-2 text-white border-white">與心靈旅伴見面</a>
+        <div class="carousel-inner">
+
+            <div class="carousel-item active"
+                style="background: linear-gradient(to right, rgba(45,58,77,0.95) 30%, rgba(45,58,77,0.3) 100%), url(images/photo-1444703686981-a3abbc4d4fe3.avif) center right / contain no-repeat var(--space-navy); min-height: 450px; height: 60vh;">
+                <div class="container h-100 d-flex align-items-center">
+                    <div class="col-lg-6 text-start px-3">
+                        <span class="en-sub">LE PETIT PRINCE</span>
+                        <h1 class="display-4 fw-bold mb-3 text-soft-gold" style="line-height: 1.4;">
+                            真正重要的東西，<br>用眼睛是看不見的。
+                        </h1>
+                        <p class="text-white-50 mb-4 font-light leading-relaxed">
+                            當浩瀚的宇宙讓你感到疲憊與無聲，請來到這裡。<br>在月球的背面，有一座專屬於你、不必假裝堅強的小行星避風港。
+                        </p>
+                        <a href="#s05" class="btn btn-organic px-4 py-2 text-white border-white">走進 B-612 星球</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="carousel-item" style="background: linear-gradient(to right, rgba(45,58,77,0.95) 30%, rgba(45,58,77,0.3) 100%), url(images/farid-askerov-5BtJwm-CCK0-unsplash.jpg) center right / contain no-repeat var(--space-navy); min-height: 450px; height: 60vh;">
-            <div class="container h-100 d-flex align-items-center">
-                <div class="col-lg-6 text-start px-3">
-                    <span class="en-sub">THE ROSE</span>
-                    <h1 class="display-4 fw-bold mb-3 text-soft-gold" style="line-height: 1.4;">
-                        你在玫瑰身上心碎的時間，<br>讓它變得如此重要。
-                    </h1>
-                    <p class="text-white-50 mb-4 font-light leading-relaxed">
-                        受了傷的防衛，只是為了保護裡面那朵脆弱的花。<br>卸下滿身的刺，讓我們在安全的玻璃罩內，細計灌溉心靈。
-                    </p>
-                    <a href="#s05" class="btn btn-organic px-4 py-2 text-white border-white">開始心靈灌溉</a>
+            <div class="carousel-item"
+                style="background: linear-gradient(to right, rgba(45,58,77,0.95) 30%, rgba(45,58,77,0.3) 100%), url('images/aron-visuals-4SboHS5sbY4-unsplash.jpg') center right / contain no-repeat var(--space-navy); min-height: 450px; height: 60vh;">
+                <div class="container h-100 d-flex align-items-center">
+                    <div class="col-lg-6 text-start px-3">
+                        <span class="en-sub">THE FOX</span>
+                        <h1 class="display-4 fw-bold mb-3 text-soft-gold" style="line-height: 1.4;">
+                            對我來說，你就是<br>宇宙唯一的存在。
+                        </h1>
+                        <p class="text-white-50 mb-4 font-light leading-relaxed">
+                            如果你馴服了我，我們將彼此需要。<br>傾聽心靈的寂靜躁動，在星際的旅途中，陪你找回最初被愛的勇氣。
+                        </p>
+                        <a href="#s05" class="btn btn-organic px-4 py-2 text-white border-white">與心靈旅伴見面</a>
+                    </div>
                 </div>
             </div>
+
+            <div class="carousel-item"
+                style="background: linear-gradient(to right, rgba(45,58,77,0.95) 30%, rgba(45,58,77,0.3) 100%), url(images/farid-askerov-5BtJwm-CCK0-unsplash.jpg) center right / contain no-repeat var(--space-navy); min-height: 450px; height: 60vh;">
+                <div class="container h-100 d-flex align-items-center">
+                    <div class="col-lg-6 text-start px-3">
+                        <span class="en-sub">THE ROSE</span>
+                        <h1 class="display-4 fw-bold mb-3 text-soft-gold" style="line-height: 1.4;">
+                            你在玫瑰身上心碎的時間，<br>讓它變得如此重要。
+                        </h1>
+                        <p class="text-white-50 mb-4 font-light leading-relaxed">
+                            受了傷的防衛，只是為了保護裡面那朵脆弱的花。<br>卸下滿身的刺，讓我們在安全的玻璃罩內，細計灌溉心靈。
+                        </p>
+                        <a href="#s05" class="btn btn-organic px-4 py-2 text-white border-white">開始心靈灌溉</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-    </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#s03" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#s03" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</section>
+        <button class="carousel-control-prev" type="button" data-bs-target="#s03" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#s03" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </section>
 
     <!-- Section 4：溫柔獨白 / 品牌理念 -->
     <section id="s04" class="py-5" style="background-color: var(--bg-cream);">
@@ -353,32 +408,62 @@
         </div>
     </section>
 
-    <!-- Section 6：心靈旅伴 / 專業團隊  -->
-    <section id="s06" class="py-5">
+    <!-- Section 6：心靈旅伴 / 專業團隊  -->    
+    <section id="s06" class="py-5" style="background-color: var(--bg-cream);">
         <div class="container py-4">
             <h2 class="text-center fw-bold text-space-dark mb-2 font-serif">懂你的星際旅伴</h2>
             <p class="text-center text-muted small mb-5">所有的成熟大人，都曾是個孩子（只是很少人記得）</p>
-            <div class="row g-4 justify-content-center">
+
+            <div class="row g-5 justify-content-center">
                 <!-- 心理師 1 -->
-                <div class="col-md-4 text-center">
-                    <div class="position-relative d-inline-block">
-                        <img src="images/user32.png" class="rounded-circle mb-3 moon-glow" width="200" height="200"
-                            alt="所長" style="border: 3px solid var(--star-gold)">
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">                            
+                            <div
+                                class="flip-card-front text-center d-flex flex-column align-items-center justify-content-center p-4">
+                                <img src="images/user32.png" class="rounded-circle mb-3 moon-glow" width="160"
+                                    height="160" alt="所長"
+                                    style="border: 3px solid var(--star-gold); object-fit: cover;">
+                                <h4 class="fw-bold mb-1 text-space-navy">林月茹 諮商心理師</h4>
+                                <p class="text-rose-pink small fw-bold mb-0">所長 ｜ B-612 星球護衛者</p>
+                                <span class="text-muted mt-3 x-small">輕觸解鎖心靈旅程 🌟</span>
+                            </div>                            
+                            <div
+                                class="flip-card-back text-center d-flex flex-column align-items-center justify-content-center p-4">
+                                <h5 class="fw-bold text-space-navy mb-2">林月茹 心理師</h5>
+                                <p class="text-rose-pink small fw-bold mb-3">「每顆流星都有落地的理由。」</p>
+                                <hr class="w-25 my-2" style="border-color: rgba(45,58,77,0.2);">
+                                <p class="text-muted small mb-0 px-2" style="line-height: 1.6;">
+                                    專長深度創傷整合、內在小孩療癒，用如同月光般的溫暖包容你的一切不完美。
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <h4 class="fw-bold mb-1">林月茹 諮商心理師</h4>
-                    <p class="text-rose-pink small fw-bold">所長 ｜ B-612 星球護衛者</p>
-                    <p class="text-muted small px-4">「每顆流星都有落地的理由。」專長深度創傷整合、內在小孩療癒，用如同月光般的溫暖包容你的一切不完美。</p>
                 </div>
+
                 <!-- 心理師 2 -->
-                <div class="col-md-4 text-center">
-                    <div class="position-relative d-inline-block">
-                        <img src="images/user31.png" class="rounded-circle mb-3 shadow" width="200" height="200"
-                            alt="心理師">
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">                            
+                            <div
+                                class="flip-card-front text-center d-flex flex-column align-items-center justify-content-center p-4">
+                                <img src="images/user31.png" class="rounded-circle mb-3 shadow" width="160" height="160"
+                                    alt="心理師" style="object-fit: cover;">
+                                <h4 class="fw-bold mb-1 text-space-navy">張宇航 諮商心理師</h4>
+                                <p class="text-star-gold small fw-bold mb-0">資深心理師 ｜ 孤獨解讀者</p>
+                                <span class="text-muted mt-3 x-small">輕觸解鎖心靈旅程 🌟</span>
+                            </div>                            
+                            <div
+                                class="flip-card-back text-center d-flex flex-column align-items-center justify-content-center p-4">
+                                <h5 class="fw-bold text-space-navy mb-2">張宇航 心理師</h5>
+                                <p class="text-star-gold small fw-bold mb-3">「迷路，是為了看清星空。」</p>
+                                <hr class="w-25 my-2" style="border-color: rgba(45,58,77,0.2);">
+                                <p class="text-muted small mb-0 px-2" style="line-height: 1.6;">
+                                    專長高壓社會焦慮、男性生涯迷惘、職場 Burnout，擅長在寂靜中為你點燃一盞導航灯。
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <h4 class="fw-bold mb-1">張宇航 諮商心理師</h4>
-                    <p class="text-star-gold small fw-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.1)">資深心理師 ｜
-                        孤獨解讀者</p>
-                    <p class="text-muted small px-4">「迷路，是為了看清星空。」專長高壓社會焦慮、男性生涯迷惘、職場 Burnout，擅長在寂靜中為你點燃一盞導航燈。</p>
                 </div>
             </div>
         </div>
