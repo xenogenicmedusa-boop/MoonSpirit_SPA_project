@@ -101,7 +101,7 @@
             position: relative;
             padding: 120px 0;
             background-color: #ffffff;
-            border-radius: 8% 8% 0 0 / 40px 40px 0 0;
+            border-radius: 8% 8% 8% 8% / 40px 40px 40px 40px;
         }
 
         .timeline-container {
@@ -210,14 +210,30 @@
             opacity: 0.6;
             letter-spacing: 0.5px;
         }
-
-        #s09 .col-md-5>div:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(45, 58, 77, 0.08) !important;
-            border-color: rgb(197, 160, 89, 0.25) !important;
+        #s09::before {
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to bottom, var(--bg-cream, #F9F6F0) 0%, transparent 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        #s09::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to top, var(--bg-cream, #F9F6F0) 0%, transparent 100%);
+            z-index: 1;
+            pointer-events: none;
         }
 
-        #s10 .col-md-5>div:hover {
+        #s09 .col-md-5>div:hover, #s10 .col-md-5>div:hover {
             transform: translateY(-6px);
             box-shadow: 0 15px 35px rgba(45, 58, 77, 0.08) !important;
             border-color: rgb(197, 160, 89, 0.25) !important;
@@ -233,6 +249,24 @@
             transform: translateY(-6px);
             box-shadow: 0 15px 35px rgba(45, 58, 77, 0.08) !important;
             border-color: rgb(197, 160, 89, 0.25) !important;
+        }
+        .wave-divider-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 1;
+        }
+        .wave-divider-top svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 80px;
+        }
+        .wave-divider-top .shape-fill {
+            fill: var(--bg-cream);
         }
 
         .shooting-stars-container {
@@ -576,10 +610,10 @@
     </section>
 
     <!-- Section 7：服務流程  -->
-    <section id="s07" class="py-5"
+    <section id="s07" class="py-5 rounded-5 overflow-hidden"
         style="background-image: url(images/jeremy-hynes-6rMK65PSioY-unsplash.jpg);background-position: center center; background-size: cover; background-attachment: fixed;">
-        <div class="container py-5">
-            <div class="text-center mb-5">
+        <div class="container">
+            <div class="text-center mb-5 pb-3">
                 <span class="en-sub">PROCESS</span>
                 <h2 class="text-space-navy fw-bold">降落小行星的療癒旅程</h2>
                 <p class="text-muted small">從發射訊號到重新出發，每一步都有我們溫柔引航</p>
@@ -648,9 +682,10 @@
 
 
     <!-- Section 9：環境介紹 -->
-    <section id="s09" class="py-5"
+    <section id="s09" class="py-5 position-relative overflow-hidden"
         style="background-image: url(images/jeremy-hynes-6rMK65PSioY-unsplash.jpg);background-position: center center; background-size: cover; background-attachment: fixed;">
-        <div class="container py-5">
+        
+        <div class="container py-5 position-relative" style="z-index: 2;">
             <div class="text-center mb-5">
                 <span class="en-sub">OUR SPACE</span>
                 <h2 class="text-space-navy fw-bold">溫暖而無塵的避風港</h2>
@@ -750,6 +785,11 @@
     <!-- Section 11：星際指南 FAQ -->
     <section id="s11" class="py-5 position-relative overflow-hidden"
         style="background-image: url(images/jeremy-hynes-6rMK65PSioY-unsplash.jpg);background-position: center center; background-size: cover; background-attachment: fixed;">
+        <div class="wave-divider-top">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" class="shape-fill"></path>"
+            </svg>
+        </div>
         <canvas id="snowflakeCanvas" class="position-absolute top-0 start-0 w-100 h-100"
             style="pointer-events: none; z-index: 1;"></canvas>
         <div class="container py-5 position-relative" style="z-index: 2;">
@@ -778,7 +818,7 @@
     </section>
 
     <!-- Section 12：收費方案 -->
-    <section id="s12" class="py-5 bg-white">
+    <section id="s12" class="py-5" style="background-color: var(--bg-cream);">
         <div class="container py-5">
             <div class="text-center mb-5 wow fadeInUp" data-wow-duration="1.2s">
                 <span class="en-sub">PRICING & FEES</span>
@@ -857,14 +897,19 @@
     </section>
 
     <!-- Section 13：信號留下 / 預約表單  -->
-    <section id="s13" class="py-5 wave-divider-top position-relative overflow-hidden"
+    <section id="s13" class="py-5 position-relative overflow-hidden"
         style="background-image: url(images/jeremy-hynes-6rMK65PSioY-unsplash.jpg);background-position: center center; background-size: cover; background-attachment: fixed;">
+        <div class="wave-divider-top">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" class="shape-fill"></path>"
+            </svg>
+        </div>
         <canvas id="snowflakeCanvas2" class="position-absolute top-0 start-0 w-100 h-100"
             style="pointer-events: none; z-index: 1;"></canvas>
         <div class="container py-5 position-relative" style="z-index: 2;">
             <div class="row justify-content-center">
                 <div class="col-lg-6 text-center mb-4">
-                    <span class="en-sub text-soft-pink">RESERVATION</span>
+                    <span class="en-sub text-rose-pink">RESERVATION</span>
                     <h2 class="text-space-navy fw-bold mb-3 font-serif">留下你的宇宙座標</h2>
                     <p class="text-soft-gold small">發射你的訊號，我們會用最溫柔的音頻與你接軌。</p>
                 </div>
