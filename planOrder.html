@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>建立你的星際契約 ✦ 方案結帳</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-cream: #F9F6F0;
+            --space-navy: #003853;
+            --space-dark: #030923;
+            --rose-clay: #bb7748;
+            --rose-pink: #9e6d70;
+            --soft-gold: #EAC575;
+            --text-dark: #3A444E;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+            letter-spacing: 0.05em;
+            font-size: 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .font-serif {
+            font-family: 'Noto Serif TC', serif;
+            font-weight: 600;
+        }
+
+        .en-sub {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            letter-spacing: 0.3em;
+            color: var(--rose-clay);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .text-rose-clay {
+            color: var(--rose-clay) !important;
+        }
+
+        .text-space-navy {
+            color: var(--space-navy) !important;
+        }
+
+        .text-rose-pink {
+            color: var(--rose-pink) !important;
+        }
+
+        .bg-cream {
+            background-color: var(--bg-cream) !important;
+        }
+
+        .form-control,
+        .form-select {
+            border: 1px solid rgba(0, 56, 83, 0.12);
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            background-color: #fff;
+            border-color: var(--rose-clay);
+            box-shadow: 0 0 0 0.25rem rgba(187, 119, 72, 0.15);
+        }
+
+        .btn-space {
+            background-color: var(--space-navy);
+            color: white;
+            border-radius: 12px;
+            padding: 0.75rem 2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-space:hover {
+            background-color: var(--space-dark);
+            color: var(--soft-gold);
+            transform: translateY(-2px);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 24px;
+        }
+        .cosmic-signal-preview {
+            background: rgba(187, 119, 72, 0.08);
+            border-left: 3px solid var(--rose-clay);
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            animation: fadeIn 0.4s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" class="container py-5 my-auto">
+        <div class="row mb-5 text-center text-lg-start">
+            <div class="col-12">
+                <span class="en-sub">SECURE CHECKOUT</span>
+                <h2 class="text-space-navy fw-bold font-serif">建立你的星際契約</h2>
+                <p class="text-muted small mb-0">請確認你的信號座標，我們將為你保留專屬的安全無重力星系。</p>
+            </div>
+        </div>
+        <div class="row g-4">
+
+            <div class="col-lg-5 order-lg-2">
+                <div class="p-4 glass-card shadow-sm position-sticky" style="top: 20px;">
+                    <span class="text-rose-pink font-serif small d-block mb-1">{{ currentPlan.sub}}</span>
+                    <h3 class="fw-bold text-space-navy font-serif mb-3">{{ currentPlan.title }}</h3>
+                    <hr class="opacity-10 my-3">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted"><i class="fa-regular fa-clock me-2"></i>諮商時長</span>
+                        <span class="fw-bold text-space-navy">{{ currentPlan.duration }}</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted"><i class="fa-solid fa-person-rays me-2"></i>星際導航員</span>
+                        <span class="text-space-navy">資深諮商心理師一對一</span>
+                    </div>
+                    <p class="text-muted bg-opacity-50 p-3 rounded-4 small leading-relaxed my-4"
+                        style="background-color: rgba(255, 255, 255, 0.55);">{{ currentPlan.desc }}</p>
+
+                    <hr class="opacity-10 my-3">
+
+                    <div class="d-flex justify-content-between align-items-end mt-4">
+                        <span class="fw-bold text-space-navy">應付能量總計</span>
+                        <div>
+                            <span class="fs-3 fw-bold text-rose-clay">NT$ {{ currentPlan.price?.toLocaleString()
+                                }}</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <a href="index.html#s12" class="text-decoration-none text-muted small">
+                            <i class="fa-solid fa-arrow-left me-1"></i>重新選擇其他方案
+                        </a>
+                    </div>
+                </div>
+            </div>        
+        <div class="col-lg-7 order-lg-1">
+            <div class="p-4 p-md-5 rounded-4 shadow-sm" style="background-color: rgba(255, 255, 255, 0.55);">
+                <h4 class="fw-bold text-space-navy mb-4 font-serif">
+                    <i class="fa-solid fa-paper-plane text-rose-clay me-2"></i>發射你的旅人訊號
+                </h4>
+                <form @submit.prevent="submitOrder" class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label small fw-bold text-space-navy">如何稱呼你這個旅人？</label>
+                        <input type="text" class="form-control" v-model="form.mname" placeholder="請輸入真實姓名或暱稱" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label small fw-bold text-space-navy">信號回收電話</label>
+                        <input type="tel" class="form-control" v-model="form.mtel" placeholder="例如：0912345678" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label small fw-bold text-space-navy">星際聯絡信箱 (Email)</label>
+                        <input type="email" class="form-control" v-model="form.memail" placeholder="我們會將預約確認信發射至此"
+                            required>
+                    </div>
+                    <div class="col-md-6">
+                            <label class="form-label small fw-bold text-space-navy">期望諮商日期</label>
+                            <input type="date" class="form-control" v-model="form.preDate" :min="todayDate" required>
+                        </div>
+                    <div class="col-md-6">
+                        <label class="form-label small fw-bold text-space-navy">期望時段</label>
+                        <select class="form-select" v-model="form.preTime" required>
+                            <option value="" disabled selected>請選擇時段</option>
+                            <option value="morning">上午時段 (09:00 - 12:00)</option>
+                            <option value="afternoon">下午時段 (13:30 - 17:00)</option>
+                            <option value="evening">夜晚時段 (18:00 - 21:00)</option>
+                        </select>
+                    </div>
+                    <div class="col-12" v-if="signalPreviewText">
+                            <div class="p-3 rounded-3 cosmic-signal-preview text-rose-clay fw-semibold">
+                                <i class="fa-solid fa-satellite-dish me-2 fa-bounce"></i>{{ signalPreviewText }}
+                            </div>
+                        </div>
+                    <div class="col-12">
+                        <label class="form-label small fw-bold text-space-navy">能量交換方式（支付方式）</label>
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <input type="radio" class="btn-check" name="payment" id="pay_credit" value="credit"
+                                    v-model="form.payment" required>
+                                <label class="btn btn-outline-secondary w-100 py-3 rounded-4 text-start px-3"
+                                    for="pay_credit">
+                                    <i class="fa-solid fa-credit-card me-2 text-space-navy"></i>線上信用卡加密安全支付
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                    <input type="radio" class="btn-check" name="payment" id="pay_atm" value="atm"
+                                        v-model="form.payment">
+                                    <label class="btn btn-outline-secondary w-100 py-3 rounded-4 text-start px-3" for="pay_atm">
+                                        <i class="fa-solid fa-building-columns me-2 text-space-navy"></i>ATM / 網銀匯款交換
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="col-12">
+                                <label class="form-label small fw-bold text-space-navy">簡述你星球上的大雨（選填備註）</label>
+                                <textarea class="form-control" rows="3" v-model="form.mcontent"
+                                    placeholder="如果有特別想讓心理師提早了解的狀況，可以在此留言..."></textarea>
+                            </div>
+                            <div class="col-12 my-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="agreeCheck" required>
+                                    <label for="agreeCheck"
+                                        class="form-check-input-label small text-muted">我已閱讀並同意
+                                      <a href="#" class="text-rose-clay fw-bold text-decoration-none" data-bs-toggle="modal" data-bs-target="#ethicalModal">「24小時預約異動倫理規範」</a>，知悉更動需於前一日通知。  </label>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-4 text-end">
+                                <button type="submit" class="btn btn-space w-100 py-3 fs-5" :disabled="isSubmitting">
+                                    <span v-if="isSubmitting"><i
+                                            class="fa-solid fa-spinner fa-spin me-2"></i>訊號發射中...</span>
+                                    <span v-else>確認簽署契約，前往結帳 ✦</span>
+                                </button>
+                            </div>
+                </form>
+            </div>
+        </div>        
+    </div>
+    </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="ethicalModal" tabindex="-1" aria-labelledby="ethicalModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content border-0 rounded-4 shadow">
+      <div class="modal-header border-bottom border-light p-4" style="background-color: var(--space-navy); color: white;">
+        <h5 class="modal-title font-serif fw-bold"  id="ethicalModalLabel">
+            <i class="fa-solid fa-scale-balanced me-2 text-soft-gold"></i>星際契約 ✦ 24小時預約異動規範
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4 text-muted small leading-relaxed">
+        <p class="fw-bold text-space-navy mb-3">親愛的星際旅人：</p>
+        <p>當你完成了這份契約，我們便為你在浩瀚宇宙中劃定了一片專屬的「無重力安全星系」。在這段預約的時空內，你的「星際導航員」（心理師）將不對任何其他飛行信號開放，只安靜守候、專注凝聽你的音頻。為保障彼此的能量流動與時間倫理，請你詳閱以下異動規範：</p>
+        <hr class="opacity-10 my-3">
+        <h6 class="fw-bold text-space-navy"><i class="fa-solid fa-circle-check text-rose-clay me-1"></i>1. 時空座標的堅守（準時與遲到）</h6>
+        <p class="ps-3">諮商時間一旦開啟，即算作能量交換的開始。若因旅人個人因素遲到，導航員仍會在線等待，但諮商無法順延，亦無法退還因遲到而縮減的諮商時段能量（費用）。</p>
+        <h6 class="fw-bold text-space-navy"><i class="fa-solid fa-circle-exclamation text-rose-clay me-1"></i>2. 預約時空的變更（更改與取消）</h6>
+        <ul>
+                        <li><strong>預約時間 24 小時前：</strong>你可於星際通訊系統中自由更改或取消預約，不產生任何能量耗損，全額退費。</li>
+                        <li><strong>預約時間 24 小時內：</strong>因該時空與導航員時間已被專屬鎖定，若在 24 小時內突然取消或變更時段，我們將扣除該次預約 <strong>50%</strong> 的能量交換點數（諮商費用），以作為導航員時間預留之合理補償。</li>
+                        <li><strong>預約時間開始後或未到：</strong>若於預約開始後才告知異動，或無故未出席會合點（缺席），視同該次諮商已進行，將不予退費，扣除 <strong>100%</strong> 諮商能量。</li>
+                    </ul>
+                   <h6 class="fw-bold text-space-navy"><i class="fa-solid fa-house-medical text-rose-clay me-1"></i>3. 天文暴風雨豁免條款（緊急例外）</h6>
+                    <p class="ps-3">若因突發之生命緊急重大變故、急性身體不適或天災等不可抗力之「天文暴風雨」導致無法如期前往，請第一時間與客服基地聯繫。我們會與心理師評估後，為你作無痛時空轉移，不扣除任何能量。</p>
+
+                    <h6 class="fw-bold text-space-navy"><i class="fa-solid fa-shield-halved text-rose-clay me-1"></i>4. 導航員的對等承諾保障</h6>
+                    <p class="ps-3">若導航員（心理師）因不可抗力或緊急狀況，必須在預約前 24 小時內被迫取消或異動您的預約，除了全額退費或免費改期外，我們將為您在未來的諮商中提供優先安排權。我們同樣會守護您的時間尊嚴。</p>
+
+                    <p class="text-center text-rose-pink font-serif mt-4 mb-0 small">✦ 願每一次星與星的會合，都能成為溫柔的光束。 ✦</p> 
+      </div>
+      <div class="modal-footer border-top border-light p-3">
+        <button type="button" class="btn btn-space px-4 py-2" data-bs-dismiss="modal">我已理解並遵守規範</button>        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.js"
+        integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios@1.13.2/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    plans: {
+                        individual: {
+                            title: '個別心理諮商',
+                            price: 2000,
+                            duration: '50分鐘',
+                            sub: '✦ INDIVIDUAL',
+                            desc: '適用於自我探索、情緒困擾（憂鬱/焦慮）、職場壓力、創傷修復。在專屬的玻璃罩內，由資深心理師一對一溫柔引航。'
+                        },
+                        couple: {
+                            title: '伴侶與婚姻諮商',
+                            price: 3000,
+                            duration: '80分鐘',
+                            sub: '✦ COUPLE & MARRIAGE',
+                            desc: '適用於伴侶衝突、親密關係信任崩解、溝通障礙。提供中立的安全星系，引導兩隻防衛的刺蝟卸下武裝，聽見彼此的愛。'
+                        },
+                        advanced: {
+                            title: '深度創傷整合',
+                            price: 2500,
+                            duration: '60分鐘',
+                            sub: '✦ ADVANCED INTEGRATION',
+                            desc: '運用 EMDR（眼動減敏與歷程更新）或身體經驗療法。細緻消化生命重大變故與失落，撫平神經系統的過度警覺。'
+                        }
+                    },
+                    currentPlanKey: 'individual',
+                    form: {
+                        mname: '',
+                        mtel: '',
+                        memail: '',
+                        preDate: '',
+                        preTime: '',
+                        payment: 'credit',
+                        mcontent: ''
+                    },
+                    isSubmitting: false,
+                    todayDate: new Date().toISOString().split('T')[0],
+                    signalPreviewText: ''
+                }
+            },
+            computed: {
+                currentPlan() {
+                    return this.plans[this.currentPlanKey] || this.plans.individual;
+                }
+            },
+            watch: {
+                'form.preDate'(newVal) {
+                    this.updateSignalPreview();
+                },
+                'form.preTime'(newVal){
+                    this.updateSignalPreview();
+                }
+            },
+            mounted() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const planParam = urlParams.get('plan');
+                if (planParam && this.plans[planParam]) {
+                    this.currentPlanKey = planParam;
+                }
+            },
+            methods: {
+                updatSignalPreview(){
+                    if (this.form.preDate && this.form.preTime){
+                        const timeMap ={
+                            morning: '上午時段 (09:00 - 12:00)',
+                            afternoon: '下午時段 (13:30 - 17:00)',
+                            evening: '夜晚時段 (18:00 - 21:00)'
+                        };
+                        const timeDesc = timeMap[this.form.preTime] || '';
+                        this.signalPreviewText = `已鎖定星際會合點：${this.form.preDate} 的 ${timeDesc}。導航儀已準備就緒！`;
+                    } else {
+                        this.signalPreviewText = '';
+                    }
+                },
+                submitOrder() {
+                    this.isSubmitting = true;
+                    const orderData = {
+                        ...this.form,
+                        planKey: this.currentPlanKey,
+                        planTitle: this.currentPlan.title,
+                        amount: this.currentPlan.price,
+                        createdAt: new Date().toLocaleString()
+                    };
+                    console.log("準備送出至資料庫的訂單明細：", orderData);
+                    axios.post('http://localhost:3000/orders', orderData)
+                        .then((response) => {
+                            if (response.status === 201) {
+                                Swal.fire({
+                                    title: "宇宙訊號傳遞成功！",
+                                    text: `已成功預約【${this.currentPlan.title}】。我們已向您的星際信箱發射確認信，請耐心靜候導航員與您接軌。`,
+                                    icon: "success",
+                                    confirmButtonText: "回到首頁",
+                                    confirmButtonColor: "#003853"
+                                }).then(() => {
+                                    window.location.href = "index.html";
+                                });
+                            }
+                        })
+                        .catch((error) => {
+                            console.error("發送訂單失敗：", error);
+                            Swal.fire({
+                                title: "訊號發射中斷",
+                                text: "目前無法連結至星際伺服器，請確認您的伺服器是否正常啟動。",
+                                icon: "error",
+                                confirmButtonText: "我知道了"
+                            });
+                        })
+                        .finally(() => {
+                            this.isSubmitting = false;
+                        });
+                }
+            }
+        }).mount("#app");
+    </script>
+</body>
+
+</html>

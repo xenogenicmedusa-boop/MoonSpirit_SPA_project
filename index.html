@@ -31,6 +31,7 @@
             scroll-behavior: smooth;
             letter-spacing: 0.05em;
             padding-top: 75px;
+            font-size: 1.25rem;
         }
 
         .fixed-top {
@@ -74,9 +75,11 @@
         .text-soft-gold {
             color: var(--soft-gold) !important;
         }
+
         .text-space-navy {
             color: var(--space-navy) !important;
         }
+
         .text-rose-pink {
             color: var(--rose-pink) !important;
         }
@@ -163,9 +166,9 @@
 
         .flip-card {
             background-color: transparent;
-            width: 310px;
-            height: 360px;
-            perspective: 1000px;
+            width: 320px;
+            height: 430px;
+            perspective: 1200px;
         }
 
         .flip-card-inner {
@@ -175,8 +178,7 @@
             text-align: center;
             transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
             transform-style: preserve-3d;
-            box-shadow: 0 8px 24px rgba(45, 58, 77, 0.06);
-            border-radius: 20px;
+            cursor: pointer;
         }
 
         .flip-card:hover .flip-card-inner {
@@ -190,30 +192,48 @@
             height: 100%;
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
-            border-radius: 20px;
-            border: 1px solid rgba(45, 58, 77, 0.05);
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(45, 58, 77, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-sizing: border-box;
         }
 
         .flip-card-front {
-            background-color: #ffffff;
-            color: var(--space-dark);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .flip-card-back {
-            background-color: #fdfbfa;
-            color: var(--space-dark);
+            background: linear-gradient(135deg, #1e2a3e 0%, #0f1726 100%);
             transform: rotateY(180deg);
+            border: 1px solid rgba(234, 197, 117, 0.25);
         }
+        .avatar-orbit {
+            position: relative;
+            padding: 10px;
+            border: 1.5px dashed rgba(234, 197, 117, 0.35);
+            border-radius: 50%;
+            display: inline-block;
+            animation: rotate-orbit 30s linear infinite;
+            margin-bottom: 20px;
+        }
+        .avatar-orbit img {
+            animation: counter-rotate 30s linear infinite;
+        }
+        @keyframes rotate-orbit {
+            from { transform: rotate(0deg);}
+            to { transform: rotate(360deg);}
+        }
+        @keyframes counter-rotate {
+            from { transform: rotate(0deg);}
+            to { transform: rotate(-360deg);}
+        }        
 
-        .x-small {
-            font-size: 0.75rem;
-            opacity: 0.6;
-            letter-spacing: 0.5px;
-        }
         #s09::before {
             content: "";
             position: absolute;
-            top:0;
+            top: 0;
             left: 0;
             width: 100%;
             height: 150px;
@@ -221,6 +241,7 @@
             z-index: 1;
             pointer-events: none;
         }
+
         #s09::after {
             content: "";
             position: absolute;
@@ -233,23 +254,13 @@
             pointer-events: none;
         }
 
-        #s09 .col-md-5>div:hover, #s10 .col-md-5>div:hover {
+        #s09 .col-md-5>div:hover,
+        #s10 .col-md-6>div:hover, #s11 .col-lg-7>div:hover, #s12 .col-md-4>div:hover {
             transform: translateY(-6px);
             box-shadow: 0 15px 35px rgba(45, 58, 77, 0.08) !important;
             border-color: rgb(197, 160, 89, 0.25) !important;
         }
-
-        #s11 .col-lg-7>div:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(45, 58, 77, 0.08) !important;
-            border-color: rgb(197, 160, 89, 0.25) !important;
-        }
-
-        #s12 .col-md-4>div:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(45, 58, 77, 0.08) !important;
-            border-color: rgb(197, 160, 89, 0.25) !important;
-        }
+        
         .wave-divider-top {
             position: absolute;
             top: 0;
@@ -259,12 +270,14 @@
             line-height: 0;
             z-index: 1;
         }
+
         .wave-divider-top svg {
             position: relative;
             display: block;
             width: calc(100% + 1.3px);
             height: 80px;
         }
+
         .wave-divider-top .shape-fill {
             fill: var(--bg-cream);
         }
@@ -303,27 +316,33 @@
                 transform: rotate(-35deg) translateX(0);
                 opacity: 0;
             }
+
             1% {
                 opacity: 1;
             }
+
             10% {
                 transform: rotate(-35deg) translateX(-250px);
                 opacity: 0;
             }
+
             100% {
                 transform: rotate(-35deg) translateX(-250px);
                 opacity: 0;
             }
         }
+
         .glow-text {
             animation: text-pulse 4s ease-in-out infinite alternate;
             text-shadow: 0 0 4px rgba(234, 197, 117, 0.2);
         }
+
         @keyframes text-pulse {
             0% {
                 opacity: 0.75;
                 text-shadow: 0 0 4px rgba(234, 197, 117, 0.1);
             }
+
             100% {
                 opacity: 1;
                 text-shadow: 0 0 12px rgba(234, 197, 117, 0.6);
@@ -337,6 +356,7 @@
             border-radius: 12px;
             transition: all 0.3s ease;
         }
+
         .helpline-link:hover {
             color: var(--soft-gold);
             background-color: rgba(234, 197, 117, 0.1);
@@ -551,29 +571,34 @@
     <!-- Section 6：心靈旅伴 / 專業團隊  -->
     <section id="s06" class="py-5" style="background-color: var(--bg-cream);">
         <div class="container py-4">
-            <h2 class="text-center fw-bold text-space-dark mb-2 font-serif">懂你的星際旅伴</h2>
+            <h2 class="text-center fw-bold text-space-dark mb-2 font-serif" style="letter-spacing: 2px;">懂你的星際旅伴</h2>
             <p class="text-center text-muted small mb-5">所有的成熟大人，都曾是個孩子（只是很少人記得）</p>
 
             <div class="row g-5 justify-content-center">
                 <!-- 心理師 1 -->
-                <div class="col-md-4 d-flex justify-content-center">
+                <div class="col-md-5 d-flex justify-content-center">
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div
                                 class="flip-card-front text-center d-flex flex-column align-items-center justify-content-center p-4">
-                                <img src="images/user32.png" class="rounded-circle mb-3 moon-glow" width="160"
+                                <div class="avatar-orbit">
+<img src="images/user32.png" class="rounded-circle" width="160"
                                     height="160" alt="所長"
                                     style="border: 3px solid var(--soft-gold); object-fit: cover;">
+                                </div>                                
                                 <h4 class="fw-bold mb-1 text-space-navy">林月茹 諮商心理師</h4>
-                                <p class="text-soft-gold small fw-bold mb-0">所長 ｜ B-612 星球護衛者</p>
-                                <span class="text-muted mt-3 x-small">輕觸解鎖心靈旅程 🌟</span>
+                                <p class="text-soft-gold small fw-bold mb-0" style="letter-spacing: 1px;">所長 ｜ B-612 星球護衛者</p>
+                                <div class="mt-4 px-3 py-1 rounded-pill" style="background: rgba(234, 197, 117, 0.15);">
+<span class="text-space-navy small" style="font-size: 0.75rem;">輕觸解鎖心靈旅程 🌟</span>
+                                </div>                                
                             </div>
                             <div
                                 class="flip-card-back text-center d-flex flex-column align-items-center justify-content-center p-4">
-                                <h5 class="fw-bold text-space-navy mb-2">林月茹 心理師</h5>
+                                <span class="text-soft-gold small mb-2" style="font-size: 1.2rem;">✦ ✦ ✦</span>
+                                <h5 class="fw-bold text-white mb-2 font-serif">林月茹 心理師</h5>
                                 <p class="text-soft-gold small fw-bold mb-3">「每顆流星都有落地的理由。」</p>
-                                <hr class="w-25 my-2" style="border-color: rgba(45,58,77,0.2);">
-                                <p class="text-muted small mb-0 px-2" style="line-height: 1.6;">
+                                <hr class="w-25 my-3" style="border-color: rgba(234,197,117,0.3); margin: 0 auto;">
+                                <p class="text-light small mb-0 px-2 leading-relaxed" style="opacity: 0.9; font-size: 0.85rem;">
                                     專長深度創傷整合、內在小孩療癒，用如同月光般的溫暖包容你的一切不完美。
                                 </p>
                             </div>
@@ -582,23 +607,28 @@
                 </div>
 
                 <!-- 心理師 2 -->
-                <div class="col-md-4 d-flex justify-content-center">
+                <div class="col-md-5 d-flex justify-content-center">
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div
                                 class="flip-card-front text-center d-flex flex-column align-items-center justify-content-center p-4">
-                                <img src="images/user31.png" class="rounded-circle mb-3 shadow" width="160" height="160"
-                                    alt="心理師" style="object-fit: cover;">
-                                <h4 class="fw-bold mb-1 text-space-navy">張宇航 諮商心理師</h4>
-                                <p class="text-soft-gold small fw-bold mb-0">資深心理師 ｜ 孤獨解讀者</p>
-                                <span class="text-muted mt-3 x-small">輕觸解鎖心靈旅程 🌟</span>
+                                <div class="avatar-orbit">
+                                    <img src="images/user31.png" class="rounded-circle" width="160" height="160"
+                                    alt="心理師" style="object-fit: cover; border: 3px solid var(--soft-gold);">
+                                </div>                                
+                                <h4 class="fw-bold mb-1 text-space-navy font-serif">張宇航 諮商心理師</h4>
+                                <p class="text-soft-gold small fw-bold mb-0" style="letter-spacing: 1px;">資深心理師 ｜ 孤獨解讀者</p>
+                                <div class="mt-4 px-3 py-1 rounded-pill" style="background: rgba(234, 197, 117, 0.15);">
+<span class="text-space-navy small" style="font-size: 0.75rem;">輕觸解鎖心靈旅程 🌟</span>
+                                </div>                                
                             </div>
                             <div
                                 class="flip-card-back text-center d-flex flex-column align-items-center justify-content-center p-4">
-                                <h5 class="fw-bold text-space-navy mb-2">張宇航 心理師</h5>
+                                <span class="text-soft-gold small mb-2" style="font-size: 1.2rem;">✦ ✦ ✦</span>
+                                <h5 class="fw-bold text-white mb-2 font-serif">張宇航 心理師</h5>
                                 <p class="text-soft-gold small fw-bold mb-3">「迷路，是為了看清星空。」</p>
-                                <hr class="w-25 my-2" style="border-color: rgba(45,58,77,0.2);">
-                                <p class="text-muted small mb-0 px-2" style="line-height: 1.6;">
+                                <hr class="w-25 my-3" style="border-color: rgba(234,197,117,0.3); margin: 0 auto;">
+                                <p class="text-light small mb-0 px-2 leading-relaxed" style="opacity: 0.9; font-size: 0.85rem;">
                                     專長高壓社會焦慮、男性生涯迷惘、職場 Burnout，擅長在寂靜中為你點燃一盞導航灯。
                                 </p>
                             </div>
@@ -662,19 +692,29 @@
     <!-- Section 8：優勢特色  -->
     <section id="s08" class="py-5" style="background-color: var(--bg-cream);">
         <div class="container py-5">
-            <h2 class="text-center text-space-navy mb-5">在寂靜宇宙中，保護你的屏障</h2>
+            <h2 class="text-center text-space-navy mb-5 fw-bold font-serif">在寂靜宇宙中，保護你的屏障</h2>
             <div class="row g-4 text-center justify-content-evenly">
-                <div class="col-md-4 px-3 wow animate__animated animate__heartBeat" data-wow-delay="1.5s"
+                <div class="col-md-6 px-3 wow animate__animated animate__heartBeat" data-wow-delay="1.5s"
                     data-wow-duration="2s">
-                    <span class="en-sub">PRIVACY</span>
+                    <div class="p-6 p-md-5 rounded-4 overflow-hidden position-relative h-100 shadow-sm" style="background-color: rgba(255, 255, 255, 0.75); border: 1px solid rgba(255, 255, 255, 0.5);">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background-image: url(images/aron-visuals-GdP2aN8GS7k-unsplash.jpg); background-position: center center; background-size: cover; opacity: 0.3; pointer-events: none; z-index: 1;"></div>
+                        <div class="position-relative" style="z-index: 2;">
+                            <span class="en-sub">PRIVACY</span>
                     <h5 class="fw-bold text-space-navy mb-2">如真空般的隱私</h5>
                     <p class="text-muted small leading-relaxed">這裡如同沒有聲音傳播的太空真空層，所有秘密與痛苦都會被完整吸納，嚴格遵循心理諮商最高倫理規範。</p>
+                        </div>
+                    </div>                    
                 </div>
-                <div class="col-md-4 px-3 wow animate__animated animate__heartBeat" data-wow-delay="2s"
-                    data-wow-duration="2s">
-                    <span class="en-sub">CARE</span>
-                    <h5 class="fw-bold text-space-navy mb-2">溫柔清除壞麵包樹</h5>
-                    <p class="text-muted small leading-relaxed">焦慮與壞習慣就如同壞種子。我們不用批判的方式拔除，而是陪你耐心地梳理，讓好念頭重新發芽。</p>
+                <div class="col-md-6 px-3 wow animate__animated animate__heartBeat" data-wow-delay="2s"
+                    data-wow-duration="2s" >
+                    <div class="p-6 p-md-5 rounded-4 overflow-hidden position-relative h-100 shadow-sm" style="background-color: rgba(255, 255, 255, 0.75); border: 1px solid rgba(255, 255, 255, 0.5);">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background-image: url(images/yasmine-arfaoui-G40jEUyEsEk-unsplash.jpg);background-position: center center; background-size: cover; opacity: 0.3; pointer-events: none; z-index: 1;"></div>
+                        <div class="position-relative" style="z-index: 2;">
+                           <span class="en-sub">CARE</span>
+                    <h5 class="fw-bold text-space-navy mb-2">溫柔清除猴麵包樹</h5>
+                    <p class="text-muted small leading-relaxed">焦慮與壞習慣就如同壞種子。我們不用批判的方式拔除，而是陪你耐心地梳理，讓好念頭重新發芽。</p> 
+                        </div>
+                    </div>                    
                 </div>
             </div>
         </div>
@@ -684,7 +724,7 @@
     <!-- Section 9：環境介紹 -->
     <section id="s09" class="py-5 position-relative overflow-hidden"
         style="background-image: url(images/jeremy-hynes-6rMK65PSioY-unsplash.jpg);background-position: center center; background-size: cover; background-attachment: fixed;">
-        
+
         <div class="container py-5 position-relative" style="z-index: 2;">
             <div class="text-center mb-5">
                 <span class="en-sub">OUR SPACE</span>
@@ -729,8 +769,8 @@
             </div>
             <div class="row g-4 justify-content-center">
 
-                <div class="col-md-5 px-3">
-                    <div class="p-4 rounded-4 h-100 position-relative d-flex flex-column justify-content-between wow animate__animated animate__fadeInUp"
+                <div class="col-md-6 px-3">
+                    <div class="p-3 rounded-4 h-100 position-relative d-flex flex-column justify-content-between wow animate__animated animate__fadeInUp"
                         data-wow-delay="0"
                         style="background: #ffffff; border: 1px solid rgba(45, 58, 77, 0.08); box-shadow: 0 10px 30px rgba(45, 58, 77, 0.04); transition: transform 0.3s ease;">
                         <div class="position-relative pt-3 pb-4">
@@ -754,8 +794,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-5 px-3">
-                    <div class="p-4 rounded-4 h-100 position-relative d-flex flex-column justify-content-between wow animate__animated animate__fadeInUp"
+                <div class="col-md-6 px-3">
+                    <div class="p-3 rounded-4 h-100 position-relative d-flex flex-column justify-content-between wow animate__animated animate__fadeInUp"
                         data-wow-delay="0.25s"
                         style="background: #ffffff; border: 1px solid rgba(45, 58, 77, 0.08); box-shadow: 0 10px 30px rgb(45, 58, 77, 0.04); transition: transform 0.3s ease;">
                         <div class="position-relative pt-3 pb-4">
@@ -786,8 +826,11 @@
     <section id="s11" class="py-5 position-relative overflow-hidden"
         style="background-image: url(images/jeremy-hynes-6rMK65PSioY-unsplash.jpg);background-position: center center; background-size: cover; background-attachment: fixed;">
         <div class="wave-divider-top">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" class="shape-fill"></path>"
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z"
+                    class="shape-fill"></path>"
             </svg>
         </div>
         <canvas id="snowflakeCanvas" class="position-absolute top-0 start-0 w-100 h-100"
@@ -802,13 +845,13 @@
                 <div class="col-lg-7">
                     <div class="p-4 rounded-4 mb-4 wow fadeInUp" data-wow-delay="0.1s"
                         style="background: rgba(45, 58, 77, 0.45); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(4px);">
-                        <h6 class="text-soft-gold fw-bold mb-3">✦ 我需要很嚴重才可以去諮商嗎？</h6>
+                        <h6 class="text-soft-gold fw-bold mb-3 fs-5">✦ 我需要很嚴重才可以去諮商嗎？</h6>
                         <p class="text-white-50 small mb-0 leading-relaxed" style="text-align: justify;">
                             不用的。就像小王子每天都要清理星球上的雜草，心理諮商是一項精神日常保養。當你覺得生活失重時，隨時歡迎你降落。</p>
                     </div>
                     <div class="p-4 rounded-4 mb-4 wow fadeInUp" data-wow-delay="0.3s"
                         style="background: rgba(45, 58, 77, 0.45); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(4px);">
-                        <h6 class="text-soft-gold fw-bold mb-3">✦ 談話內容真的會完全保密嗎？</h6>
+                        <h6 class="text-soft-gold fw-bold mb-3 fs-5">✦ 談話內容真的會完全保密嗎？</h6>
                         <p class="text-white-50 small mb-0 leading-relaxed">
                             是的。除了涉及自傷或法律明文規範的極少數通報例外情形，您在諮商室內所說的任何話，皆受到嚴格的保密倫理限制。</p>
                     </div>
@@ -819,7 +862,7 @@
 
     <!-- Section 12：收費方案 -->
     <section id="s12" class="py-5" style="background-color: var(--bg-cream);">
-        <div class="container py-5">
+        <div class="container py-5" id="app">
             <div class="text-center mb-5 wow fadeInUp" data-wow-duration="1.2s">
                 <span class="en-sub">PRICING & FEES</span>
                 <h2 class="text-space-navy fw-bold">心靈灌溉的預算方案</h2>
@@ -842,7 +885,7 @@
                                 適用於自我探索、情緒困擾（憂鬱/焦慮）、職場壓力、創傷修復。在專屬的玻璃罩內，由資深心理師一對一溫柔引航。</p>
                         </div>
                         <div class="mt-4">
-                            <a href="#s10" class="btn btn-organic w-100 py-2">選擇此方案</a>
+                            <a href="planOrder.html?plan=individual" class="btn btn-organic w-100 py-2">選擇此方案</a>
                         </div>
                     </div>
                 </div>
@@ -862,7 +905,7 @@
                                 適用於伴侶衝突、親密關係信任崩解、溝通障礙。提供中立的安全星系，引導兩隻防衛的刺蝟卸下武裝，聽見彼此的愛。</p>
                         </div>
                         <div class="mt-4">
-                            <a href="#s10"
+                            <a href="planOrder.html?plan=couple"
                                 class="btn btn-organic w-100 py-2 bg-space-navy text-white border-0">選擇此方案</a>
                         </div>
                     </div>
@@ -883,7 +926,7 @@
                                 EMDR（眼動減敏與歷程更新）或身體經驗療法。細緻消化生命重大變故與失落，撫平神經系統的過度警覺。</p>
                         </div>
                         <div class="mt-4">
-                            <a href="#s10" class="btn btn-organic w-100 py-2">選擇此方案</a>
+                            <a href="planOrder.html?plan=advanced" class="btn btn-organic w-100 py-2">選擇此方案</a>
                         </div>
                     </div>
                 </div>
@@ -900,8 +943,11 @@
     <section id="s13" class="py-5 position-relative overflow-hidden"
         style="background-image: url(images/jeremy-hynes-6rMK65PSioY-unsplash.jpg);background-position: center center; background-size: cover; background-attachment: fixed;">
         <div class="wave-divider-top">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" class="shape-fill"></path>"
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z"
+                    class="shape-fill"></path>
             </svg>
         </div>
         <canvas id="snowflakeCanvas2" class="position-absolute top-0 start-0 w-100 h-100"
@@ -916,22 +962,23 @@
                 <div class="col-lg-7">
                     <div class="p-4 p-md-5 rounded-4"
                         style="background: rgba(45, 58, 77, 0.45); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(4px);">
-                        <form class="row g-3">
+                        <form class="row g-3" id="reservationForm">
                             <div class="col-md-6">
                                 <input type="text" class="form-control border-0 py-3 px-4 rounded-4 small"
-                                    placeholder="如何稱呼你這個旅人？" required>
+                                    placeholder="如何稱呼你這個旅人？" id="mname" required>
                             </div>
                             <div class="col-md-6">
                                 <input type="tel" class="form-control border-0 py-3 px-4 rounded-4 small"
-                                    placeholder="信號回收電話" required>
+                                    placeholder="信號回收電話" id="mtel" required>
                             </div>
                             <div class="col-12">
                                 <textarea class="form-control border-0 py-3 px-4 rounded-4 small" style="height: 120px;"
-                                    placeholder="簡述你星球上的大雨（選填）"></textarea>
+                                    placeholder="簡述你星球上的大雨（選填）" id="mcontent"></textarea>
                             </div>
                             <div class="col-12 text-center mt-4">
                                 <button type="submit"
-                                    class="btn btn-organic px-5 py-3 bg-space-navy text-white border-0">向宇宙發射預約信號
+                                    class="btn btn-organic px-5 py-3 bg-space-navy text-white border-0"
+                                    id="ok_btn">向宇宙發射預約信號
                                     ✦</button>
                             </div>
                         </form>
@@ -999,15 +1046,22 @@
             <div class="shooting-star"></div>
         </div>
         <div class="container position-relative" style="z-index: 2;">
-            <span class="font-serif d-block mb-2 text-soft-gold glow-text" style="letter-spacing: 2px;">✦ 月亮心理諮商診所 ✦</span>
+            <span class="font-serif d-block mb-2 text-soft-gold glow-text" style="letter-spacing: 2px;">✦ 月亮心理諮商診所
+                ✦</span>
             <small class="d-block fs-7">「星星發亮，是為了讓每個人有一天都能找到屬於自己的那一顆。」</small>
             <hr style="border-color: rgba(255,255,255,0.1);">
-            <small class="fs-7">© 2026 Moon Counseling Clinic ． <a href="tel:1925" class="helpline-link"> 衛福部安心專線 1925</a></small>
+            <small class="fs-7">© 2026 Moon Counseling Clinic ． <a href="tel:1925" class="helpline-link"> 衛福部安心專線
+                    1925</a></small>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.js"
+        integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios@1.13.2/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <script>
         if (typeof WOW !== 'undefined') {
@@ -1083,6 +1137,60 @@
                 }
             }
         });
+
+        $(function () {
+            $('#mname').blur(function () {
+                console.log($(this).val());
+            });
+            $('#mtel').blur(function () {
+                console.log($(this).val());
+            });
+            $('#reservationForm').submit(function (e) {
+                e.preventDefault();
+                const dataJSON = {
+                    "mname": $('#mname').val().trim(),
+                    "mtel": $('#mtel').val().trim(),
+                    "mcontent": $('#mcontent').val().trim() || "none"
+                };
+                console.log("準備發送的資料:", JSON.stringify(dataJSON));
+                axios.post('http://localhost:3000/messages', dataJSON)
+                    .then(function (response) {
+                        console.log("伺服器回應:",response);
+                        if (response.status == 201) {
+                            Swal.fire({
+                                title: "發射成功 ✦",
+                                text: "我們已收到你的宇宙座標，請靜候音頻接軌。",
+                                icon: "success",
+                                confirmButtonText: "我知道了",                               
+                            }).then((result) => {
+                                $('#reservationForm')[0].reset();                                
+                            });
+                        } else {
+                            Swal.fire({
+                                title: "發射失敗",
+                                text: "請確認表單是否完整填寫",
+                                icon: "warning"
+                            });                        
+            }
+        })
+                .catch(function (error) {
+                    console.error("發送出錯:",error);
+                    Swal.fire({
+                        title: "訊號中斷",
+                        text: "無法連結到宇宙伺服器，請確認伺服器是否正常啟動。",
+                        icon: "error"
+                    });
+                });                
+        });
+    });
+
+    Vue.createApp({
+        data(){
+            return {
+
+            }
+        }
+    }).mount("#app")
     </script>
 </body>
 
